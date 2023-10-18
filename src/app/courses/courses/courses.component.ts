@@ -12,7 +12,7 @@ import { CoursesService } from '../services/courses.service';
 })
 export class CoursesComponent implements OnInit {
   // courses: Course[];
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns: string[];
 
   // coursesService: CoursesService;
@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit {
 
     // this.coursesService = new CoursesService();
     // this.courses = [{ _id: '1', name: 'Angular', category: 'Front-end' }];
-    this.courses = this.coursesService.list();
+    this.courses$ = this.coursesService.list();
   }
 
   ngOnInit(): void {}
